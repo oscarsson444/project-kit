@@ -47,7 +47,7 @@ export default function Home() {
 
   const handleTextToSpeech = () => {
     const synth = window.speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance(transcript);
+    const utterance = new SpeechSynthesisUtterance(quote?.quote);
     utterance.rate = 0.8;
     utterance.pitch = 1;
     utterance.lang = "en-US";
