@@ -25,3 +25,27 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer base {
+  h1 {
+    @apply font-mono text-xl text-white;
+  }
+  p {
+    @apply font-mono text-base text-white;
+  }
+}
+
+@layer components {
+  .glass-blur {
+    @apply rounded-xl bg-white/10 backdrop-blur-sm;
+  }
+
+  .glass {
+    display: flow-root;
+    position: relative;
+    @apply rounded-xl text-white border-[1px] border-white px-4 py-2;
+  }
+}
+
+
+

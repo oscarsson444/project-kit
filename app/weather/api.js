@@ -1,4 +1,6 @@
-const weatherCode = {
+"use client";
+
+export const weatherCode = {
   0: "Clear sky",
   1: "Mainly clear",
   2: "Partly cloudy",
@@ -48,6 +50,7 @@ export const fetchWeather = async () => {
       "sunrise",
       "sunset",
       "uv_index_max",
+      "precipitation_sum",
     ],
     timezone: "Europe/Berlin",
   };
@@ -77,7 +80,7 @@ export const fetchWeather = async () => {
 
     // Parse the JSON in the response
     const data = await resp.json();
-    console.log(data);
+    return data;
   } catch (error) {
     // Handle errors
     console.error("Fetch error:", error);
