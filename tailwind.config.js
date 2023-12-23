@@ -15,6 +15,9 @@ module.exports = {
       fontFamily: {
         mono: ["Roboto Mono", "monospace"],
       },
+      colors: {
+        primary: "#51edf0",
+      },
     },
   },
   plugins: [],

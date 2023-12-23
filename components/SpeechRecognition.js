@@ -3,13 +3,13 @@ import { useEffect, useState, useRef } from "react";
 export default function SpeechRecognition() {
   const [transcript, setTranscript] = useState("");
   const [isListening, setIsListening] = useState(false);
-  let recognition = null;
   const recognitionRef = useRef(null);
 
   useEffect(() => {
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
     recognitionRef.current = new SpeechRecognition();
+    recognitionRef.current.lang = "sv-SE";
     recognitionRef.current.interimResults = true;
     recognitionRef.current.continuous = true;
 

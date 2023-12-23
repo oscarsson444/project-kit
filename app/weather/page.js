@@ -26,7 +26,7 @@ export default function Weather() {
         <DigitalClock />
         <br />
         <div className="grid grid-cols-2 justify-center items-center gap-10">
-          <div className="flex flex-col items-center justify-center glass glass-blur">
+          <div className="flex flex-col h-full items-center justify-center glass glass-blur">
             <h1 className="text-2xl">Linköping</h1>
             <CurrentWeather currentWeather={weather?.current} />
           </div>
