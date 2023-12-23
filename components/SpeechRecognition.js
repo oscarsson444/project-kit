@@ -1,34 +1,35 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function SpeechRecognition() {
   const [transcript, setTranscript] = useState("");
   const [isListening, setIsListening] = useState(false);
   let recognition = null;
+  const recognitionRef = useRef(null);
 
   useEffect(() => {
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
-    recognition = new SpeechRecognition();
-    recognition.interimResults = true;
-    recognition.continuous = true;
+    recognitionRef.current = new SpeechRecognition();
+    recognitionRef.current.interimResults = true;
+    recognitionRef.current.continuous = true;
 
-    recognition.onresult = (event) => {
+    recognitionRef.current.onresult = (event) => {
       const transcript = Array.from(event.results)
         .map((result) => result[0])
         .map((result) => result.transcript)
         .join("");
       setTranscript(transcript);
     };
-
-    if (isListening) {
-      recognition.start();
-    } else {
-      if (recognition) recognition.stop();
-      setTranscript("");
-    }
-  }, [isListening]);
+  }, []);
 
   const toggleListening = () => {
+    if (isListening) {
+      recognitionRef.current.stop();
+      setTranscript("");
+    } else {
+      recognitionRef.current.start();
+    }
+
     setIsListening((prevState) => !prevState);
   };
 
