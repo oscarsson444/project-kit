@@ -173,7 +173,6 @@ export const searchLocation = async () => {
 
     // Parse the JSON in the response
     const data = await resp.json();
-    console.log(data);
   } catch (error) {
     // Handle errors
     console.error("Fetch error:", error);

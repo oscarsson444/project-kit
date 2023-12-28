@@ -3,7 +3,6 @@
 import { weatherCode } from "./api";
 
 export const CurrentWeather = ({ currentWeather }) => {
-  console.log(currentWeather);
   return (
     <div className="grid grid-cols-2 gap-3">
       <div className="flex flex-col h-full items-center justify-center space-y-2">
