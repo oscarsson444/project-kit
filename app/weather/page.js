@@ -14,9 +14,7 @@ const createWeekDays = () => {
   for (let i = 0; i < 7; i++) {
     const date = new Date(today);
     date.setDate(date.getDate() + i);
-    const dayName = date
-      .toLocaleDateString("sv", { weekday: "long" })
-      .replace(/^\w/, (c) => c.toLocaleUpperCase());
+    const dayName = date.toLocaleDateString("en", { weekday: "long" });
     days.push(dayName);
   }
   return days;
@@ -25,7 +23,6 @@ const createWeekDays = () => {
 export default function Weather() {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log(createWeekDays());
 
   useEffect(() => {
     const getData = async () => {
