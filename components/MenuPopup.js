@@ -31,10 +31,12 @@ export const MenuPopup = ({ isOpen, onClose }) => {
 
     if (isOpen) {
       document.addEventListener("click", handleClickOutside);
+      document.addEventListener("scroll", onClose);
     }
 
     return () => {
       document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("scroll", onClose);
     };
   }, [isOpen, onClose]);
 
@@ -46,6 +48,7 @@ export const MenuPopup = ({ isOpen, onClose }) => {
   return (
     <motion.div
       animate={isOpen ? "open" : "closed"}
+      initial="closed"
       ref={ref}
       variants={variants}
       transition={{ type: "spring", stiffness: 280, damping: 25 }}

@@ -60,7 +60,7 @@ export default function Weather() {
             </div>
           </div>
           <br />
-          <div className="w-[70%] space-y-4">
+          <div className="w-[70%] space-y-4 pb-10">
             {createWeekDays().map((day, index) => (
               <WeeklyWeather
                 key={index}

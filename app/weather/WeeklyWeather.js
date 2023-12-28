@@ -10,7 +10,7 @@ export const WeeklyWeather = ({ weather, weekday, index }) => {
 
   const variants = {
     open: { opacity: 1, height: "auto" },
-    closed: { opacity: 0, height: 0 },
+    closed: { opacity: 1, height: 0, overflow: "hidden" },
   };
 
   return (
@@ -55,18 +55,17 @@ export const WeeklyWeather = ({ weather, weekday, index }) => {
           </p>
         </div>
       </div>
-
       <motion.div
-        initial="closed"
+        initial={false}
         animate={expanded ? "open" : "closed"}
         variants={variants}
-        className="w-full"
       >
         <div className="w-48 h-1 mx-auto mb-6 mt-2 bg-gray-100 border-0 rounded dark:bg-gray-700" />
         {weather?.hourly.time
           .slice(index * 24, (index + 1) * 24)
           .map((time, hourIndex) => {
-            if (index === 0 && hourIndex < new Date().getHours() + 1) return;
+            if (index === 0 && hourIndex < new Date().getHours() + 1)
+              return null;
             const currentIndex = index * 24 + hourIndex;
             return (
               <div
