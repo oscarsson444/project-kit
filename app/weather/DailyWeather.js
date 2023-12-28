@@ -6,7 +6,7 @@ import { GiSunRadiations } from "react-icons/gi";
 
 export const DailyWeatherInfo = ({ dailyWeather }) => {
   return (
-    <div className="grid grid-cols-2 gap-2 pl-[10%]">
+    <div className="grid grid-cols-2 gap-2 pl-[10%] items-center justify-center h-full">
       <div className="flex flex-row gap-2">
         <MdSunny color="yellow" className="w-5 h-5" />
         <p>{dailyWeather?.sunrise[0].split("T")[1]}</p>

@@ -1,14 +1,20 @@
 "use client";
 
+import { MdSunny } from "react-icons/md";
+import { IoPartlySunny } from "react-icons/io5";
+import { IoIosCloud } from "react-icons/io";
+import { GiFog } from "react-icons/gi";
+import { BsCloudDrizzleFill } from "react-icons/bs";
+
 export const weatherCode = {
-  0: "Clear sky",
-  1: "Mainly clear",
-  2: "Partly cloudy",
-  3: "Overcast",
-  45: "Fog and depositing rime fog",
-  48: "Fog and depositing rime fog",
-  51: "Drizzle: Light intensity",
-  53: "Drizzle: Moderate intensity",
+  0: { desc: "Clear sky", icon: <MdSunny className="h-10 w-10" /> },
+  1: { desc: "Mainly clear", icon: <MdSunny /> },
+  2: { desc: "Partly cloudy", icon: <IoPartlySunny /> },
+  3: { desc: "Overcast", icon: <IoIosCloud className="h-8 w-8" /> },
+  45: { desc: "Fog and depositing rime fog", icon: <GiFog /> },
+  48: { desc: "Fog and depositing rime fog", icon: <GiFog /> },
+  51: { desc: "Drizzle: Light intensity", icon: <BsCloudDrizzleFill /> },
+  53: { desc: "Drizzle: Moderate intensity", icon: <BsCloudDrizzleFill /> },
   55: "Drizzle: Dense intensity",
   56: "Freezing Drizzle: Light intensity",
   57: "Freezing Drizzle: Dense intensity",
