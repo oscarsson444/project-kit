@@ -1,4 +1,5 @@
 "use client";
+import { Calendar } from "@/components/Calendar";
 import { DigitalClock } from "@/components/DigitalClock";
 import Quote from "@/components/Quote";
 import SpeechRecognition from "@/components/SpeechRecognition";
@@ -12,9 +13,10 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <DigitalClock />
-        <Quote />
-        <SpeechRecognition />
+        <div className="flex flex-col">
+          <DigitalClock />
+          <Calendar />
+        </div>
       </motion.div>
     </main>
   );

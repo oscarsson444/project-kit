@@ -13,7 +13,7 @@ export const DigitalClock = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col items-center mt-4">
       <h1 className="text-3xl">{time?.toLocaleTimeString()}</h1>
     </div>
   );
