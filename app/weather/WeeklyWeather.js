@@ -14,7 +14,7 @@ export const WeeklyWeather = ({ weather, weekday, index }) => {
   };
 
   return (
-    <div className="glass glass-blur">
+    <div className="glass glass-blur hover:bg-white/20">
       <div
         onClick={() => setExpanded((prev) => !prev)}
         className="grid grid-cols-5 items-center justify-center min-h-[100px] cursor-pointer"
